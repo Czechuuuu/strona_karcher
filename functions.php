@@ -31,7 +31,7 @@ function strona_karcher_register_post_type() {
 add_action('init', 'strona_karcher_register_post_type');
 
 add_filter('manage_sprzet_posts_columns', function($columns) {
-    $columns['typ_sprzetu'] = 'Klasa';
+    $columns['typ_sprzetu'] = 'Typ sprzętu';
     $columns['cena_za_dzien'] = 'Cena za dzień';
     return $columns;
 });
@@ -39,7 +39,11 @@ add_filter('manage_sprzet_posts_columns', function($columns) {
 add_action('manage_sprzet_posts_custom_column', function($column, $post_id) {
     if ($column === 'typ_sprzetu') {
         $typ_sprzetu = get_field('typ_sprzetu', $post_id);
-        echo $typ_sprzetu ? esc_html($typ_sprzetu) : '-';
+        if ($typ_sprzetu && is_array($typ_sprzetu)) {
+            echo esc_html(implode(', ', $typ_sprzetu));
+        } else {
+            echo $typ_sprzetu ? esc_html($typ_sprzetu) : '-';
+        }
     }
     if ($column === 'cena_za_dzien') {
         $cena = get_field('cena_za_dzien', $post_id);
