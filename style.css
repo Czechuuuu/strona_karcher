@@ -14,6 +14,7 @@ body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
+  background-color: #f7f7f7;
 }
 
 header {
@@ -24,9 +25,11 @@ header {
 }
 
 .hero {
-  background-color: #eee;
+  background: linear-gradient(90deg, #ffe600 0%, #fff700 100%);
+  color: #222;
   padding: 40px 20px;
   text-align: center;
+  border-bottom: 4px solid #009fe3;
 }
 
 .equipment {
@@ -35,13 +38,73 @@ header {
   justify-content: center;
   gap: 20px;
   padding: 40px 20px;
+  max-width: 1320px;
+  margin: 0 auto;
 }
 
 .equipment-item {
-  border: 1px solid #ccc;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  border: 2px solid #009fe3;
+  background: #fff;
   padding: 20px;
-  width: 300px;
+  flex: 1 1 300px;
+  max-width: 300px;
+  min-height: 420px;
   text-align: center;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+  transition: box-shadow 0.3s;
+  position: relative;
+}
+
+.equipment-item:hover {
+  box-shadow: 0 4px 16px rgba(0,159,227,0.15);
+  border-color: #ffe600;
+}
+
+.equipment-item h3 {
+  margin-bottom: 18px;
+  min-height: 48px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.equipment-item .description {
+  min-height: 60px;
+  margin-bottom: 0;
+  flex-grow: 1;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.equipment-item .button {
+  margin-top: auto;
+  background: #009fe3;
+  color: #fff;
+  border: none;
+  padding: 10px 24px;
+  border-radius: 6px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: background 0.3s;
+  display: inline-block;
+}
+
+.equipment-item .button:hover {
+  background: #ffe600;
+  color: #222;
+}
+
+.equipment-item .price {
+  color: #009fe3;
+  font-size: 1.1em;
+  font-weight: bold;
+  margin: 10px 0;
 }
 
 footer {
@@ -69,12 +132,34 @@ footer {
   padding: 0.6em 1.2em;
   text-decoration: none;
   color: #fff;
-  background-color: #0073aa;
+  background-color: #009fe3;
   border-radius: 6px;
   transition: background-color 0.3s ease;
   font-weight: 500;
 }
 
 .main-menu a:hover {
-  background-color: #005a87;
+  background-color: #ffe600;
+  color: #222;
+}
+
+@media (max-width: 1400px) {
+  .equipment {
+    max-width: 990px;
+  }
+  .equipment-item {
+    max-width: 300px;
+    min-height: 420px;
+    padding: 20px;
+  }
+}
+@media (max-width: 1050px) {
+  .equipment {
+    max-width: 660px;
+  }
+}
+@media (max-width: 700px) {
+  .equipment {
+    max-width: 320px;
+  }
 }
