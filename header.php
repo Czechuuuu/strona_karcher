@@ -20,9 +20,16 @@
       <nav>
         <?php
             wp_nav_menu([
-                'theme_location' => 'main_menu',
-                'container' => false,
-                'menu_class' => 'main-menu',
+              'theme_location' => 'main_menu',
+              'container' => false,
+              'menu_class' => 'main-menu',
+              'items_wrap' => '<ul id="%1$s" class="%2$s">%3$s</ul>',
+              'walker' => new class extends Walker_Nav_Menu {
+                function start_el(&$output, $item, $depth = 0, $args = null, $id = 0) {
+                  if (untrailingslashit($item->url) === untrailingslashit(home_url('/'))) return;
+                  parent::start_el($output, $item, $depth, $args, $id);
+                }
+              }
             ]);
         ?>
       </nav>

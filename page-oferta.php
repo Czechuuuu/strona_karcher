@@ -60,7 +60,8 @@ get_header(); ?>
     <h1 class="oferta-title">
       <span class="oferta-icon">🛠️</span> Oferta <span class="oferta-underline"></span>
     </h1>
-    <p class="oferta-desc">Sprawdź dostępny sprzęt do wypożyczenia.<br><span class="oferta-highlight">Wybierz kategorię lub zobacz całą ofertę!</span></p>
+    <p class="oferta-desc">Sprawdź dostępny sprzęt do wypożyczenia.</p>
+    <span class="oferta-highlight">Wybierz kategorię lub zobacz całą ofertę!</span>
 
     <div class="category-list">
       <?php foreach ($categories as $slug => $cat): if (empty($groups[$slug])) continue; ?>
