@@ -24,10 +24,15 @@
     </div>
     <div class="footer-bottom">
       <p>&copy; <?php echo date('Y'); ?> Wypożyczalnia Karcher. Wszelkie prawa zastrzeżone.</p>
+      <div class="footer-legal-links">
+        <a href="<?php echo get_template_directory_uri(); ?>/assets/polityka-prywatnosci.pdf" download class="footer-legal-link">Polityka prywatności</a> |
+        <a href="<?php echo get_template_directory_uri(); ?>/assets/regulamin.pdf" download class="footer-legal-link">Regulamin</a>
+      </div>
     </div>
   </div>
 </footer>
 
 <?php wp_footer(); ?>
+<script src="<?php echo get_template_directory_uri(); ?>/assets/js/faq.js"></script>
 </body>
 </html>

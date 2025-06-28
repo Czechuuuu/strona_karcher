@@ -4,6 +4,7 @@
     <meta charset="<?php bloginfo('charset'); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <?php wp_head(); ?>
+    <script defer src="<?php echo get_template_directory_uri(); ?>/assets/js/hamburger.js"></script>
 </head>
 <body <?php body_class(); ?>>
 
@@ -16,6 +17,14 @@
           </span>
           <span class="logo-text">Wypożyczalnia Kärcher</span>
         </a>
+      </div>
+      <div class="header-hamburger-wrap">
+        <button class="hamburger" id="hamburger-menu" aria-label="Otwórz menu" aria-expanded="false" aria-controls="main-menu">
+          <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+          </span>
+        </button>
+        <span class="hamburger-label" id="hamburger-label">Rozwiń menu</span>
       </div>
       <nav>
         <?php
