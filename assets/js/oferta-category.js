@@ -4,11 +4,13 @@ document.addEventListener('DOMContentLoaded', function() {
   const label = document.getElementById('current-category-label');
   const categoryCurrent = document.querySelector('.category-current');
 
-  function animateCategoryTitle() {
-    if (!categoryCurrent) return;
-    categoryCurrent.classList.remove('pop-anim');
-    void categoryCurrent.offsetWidth;
-    categoryCurrent.classList.add('pop-anim');
+  if(groups.length > 0) {
+    groups.forEach(group => {
+      if(group.style.display === '' || group.style.display === 'block') {
+        window.animateEquipmentItems && window.animateEquipmentItems(group.querySelectorAll('.equipment-item'));
+      }
+    });
+    window.animateCategoryTitle && window.animateCategoryTitle(categoryCurrent);
   }
 
   tiles.forEach(tile => {
@@ -19,14 +21,20 @@ document.addEventListener('DOMContentLoaded', function() {
       groups.forEach(group => {
         if(group.getAttribute('data-category') === val) {
           group.style.display = '';
+          window.animateEquipmentItems && window.animateEquipmentItems(group.querySelectorAll('.equipment-item'));
         } else {
           group.style.display = 'none';
         }
       });
       if(label) {
         label.textContent = this.querySelector('.name').textContent;
-        animateCategoryTitle();
+        window.animateCategoryTitle && window.animateCategoryTitle(categoryCurrent);
       }
     });
   });
+
+  const homeEquipment = document.querySelectorAll('.equipment-home .equipment-item');
+  if(homeEquipment.length > 0 && window.animateEquipmentItems) {
+    window.animateEquipmentItems(homeEquipment);
+  }
 });

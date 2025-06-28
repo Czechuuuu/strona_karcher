@@ -56,13 +56,12 @@ foreach ($posts as $post) {
 
 get_header(); ?>
 
-<section class="hero">
+<section class="hero oferta-hero">
     <h1 class="oferta-title">
       <span class="oferta-icon">🛠️</span> Oferta <span class="oferta-underline"></span>
     </h1>
     <p class="oferta-desc">Sprawdź dostępny sprzęt do wypożyczenia.</p>
     <span class="oferta-highlight">Wybierz kategorię lub zobacz całą ofertę!</span>
-
     <div class="category-list">
       <?php foreach ($categories as $slug => $cat): if (empty($groups[$slug])) continue; ?>
         <div class="category-tile<?php echo $slug === 'all' ? ' active' : ''; ?>" data-category="<?php echo esc_attr($slug); ?>">
@@ -111,7 +110,16 @@ wp_reset_postdata();
 </div>
 
 <?php
+wp_enqueue_script('equipment-animations', get_template_directory_uri() . '/assets/js/equipment-animations.js', [], null, true);
 wp_enqueue_script('oferta-category', get_template_directory_uri() . '/assets/js/oferta-category.js', [], null, true);
 ?>
 
 <?php get_footer(); ?>
+
+<?php
+add_action('wp_enqueue_scripts', function() {
+  if (is_page_template('page-oferta.php') || is_page('oferta')) {
+    wp_enqueue_style('oferta-css', get_template_directory_uri() . '/assets/css/oferta.css', [], null);
+  }
+});
+?>

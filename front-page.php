@@ -1,3 +1,13 @@
+<?php
+// ...existing code...
+
+add_action('wp_enqueue_scripts', function() {
+  if (is_front_page() || is_page_template('front-page.php')) {
+    wp_enqueue_style('front-page-css', get_template_directory_uri() . '/assets/css/front-page.css', [], null);
+  }
+});
+?>
+
 <?php get_header(); ?>
 
 <section class="hero">
@@ -35,7 +45,32 @@
     </div>
 </section>
 
-<p class="slogan"><strong>Wypożyczalnia Kärcher – Twój partner w czystości i porządku!</strong></p>
+<section class="how-it-works-section">
+  <h2 class="how-it-works-title">Jak to działa?</h2>
+  <div class="how-it-works-steps">
+    <div class="how-step">
+      <div class="how-step-number">1</div>
+      <div class="how-step-content">
+        <strong>Wybierz sprzęt</strong>
+        <p>Przejrzyj ofertę i wybierz urządzenie dopasowane do Twoich potrzeb.</p>
+      </div>
+    </div>
+    <div class="how-step">
+      <div class="how-step-number">2</div>
+      <div class="how-step-content">
+        <strong>Zarezerwuj online lub telefonicznie</strong>
+        <p>Wypełnij formularz rezerwacji lub zadzwoń do nas, by zarezerwować sprzęt.</p>
+      </div>
+    </div>
+    <div class="how-step">
+      <div class="how-step-number">3</div>
+      <div class="how-step-content">
+        <strong>Odbierz i korzystaj</strong>
+        <p>Odbierz sprzęt w ustalonym terminie i ciesz się profesjonalnym wsparciem.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
 <section class="popular-equipment">
     <h2>Najpopularniejszy sprzęt</h2>
@@ -59,5 +94,17 @@
         ?>
     </div>
 </section>
+
+<p class="slogan"><strong>Wypożyczalnia Kärcher – Twój partner w czystości i porządku!</strong></p>
+
+<script src="<?php echo get_template_directory_uri(); ?>/assets/js/equipment-animations.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const homeEquipment = document.querySelectorAll('.equipment-home .equipment-item');
+  if(homeEquipment.length > 0 && window.animateEquipmentItems) {
+    window.animateEquipmentItems(homeEquipment);
+  }
+});
+</script>
 
 <?php get_footer(); ?>

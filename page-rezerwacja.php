@@ -42,3 +42,11 @@ get_header(); ?>
 </section>
 
 <?php get_footer(); ?>
+
+<?php
+add_action('wp_enqueue_scripts', function() {
+  if (is_page_template('page-rezerwacja.php') || is_page('rezerwacja')) {
+    wp_enqueue_style('rezerwacja-css', get_template_directory_uri() . '/assets/css/rezerwacja.css', [], null);
+  }
+});
+?>

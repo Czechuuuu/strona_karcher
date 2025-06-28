@@ -13,6 +13,10 @@
         <?php if ($cena): ?>
         <p class="price">Cena: <?php echo esc_html($cena); ?> zł / dzień</p>
         <?php endif; ?>
+        <?php $kaucja = get_field('kaucja'); ?>
+        <?php if ($kaucja): ?>
+        <p class="deposit">Kaucja: <?php echo esc_html($kaucja); ?> zł</p>
+        <?php endif; ?>
         <?php endif; ?>
         <a href="tel:123456789" class="button">Zadzwoń i wypożycz</a>
     </div>

@@ -8,10 +8,9 @@ function strona_karcher_setup() {
 }
 add_action('after_setup_theme', 'strona_karcher_setup');
 
-function strona_karcher_enqueue_styles() {
-    wp_enqueue_style('strona_karcher-style', get_stylesheet_uri());
-}
-add_action('wp_enqueue_scripts', 'strona_karcher_enqueue_styles');
+add_action('wp_enqueue_scripts', function() {
+    wp_enqueue_style('strona-karcher-style', get_stylesheet_uri(), [], null);
+});
 
 function strona_karcher_register_post_type() {
     register_post_type('sprzet', [
@@ -70,3 +69,43 @@ add_action('pre_get_posts', function($query) {
         }
     }
 });
+
+add_action('admin_menu', function() {
+    add_menu_page(
+        'Opinie klientów',
+        'Opinie klientów',
+        'manage_options',
+        'karcher_reviews_admin',
+        'karcher_reviews_admin_page',
+        'dashicons-star-filled',
+        25
+    );
+});
+
+function karcher_reviews_admin_page() {
+    global $wpdb;
+    if (isset($_GET['delete_review']) && current_user_can('manage_options')) {
+        $id = intval($_GET['delete_review']);
+        $wpdb->delete($wpdb->prefix . 'karcher_reviews', ['id' => $id]);
+        echo '<div class="updated notice"><p>Opinia została usunięta.</p></div>';
+    }
+    $reviews = $wpdb->get_results("SELECT * FROM {$wpdb->prefix}karcher_reviews ORDER BY created_at DESC");
+    echo '<div class="wrap"><h1>Opinie klientów</h1>';
+    if ($reviews) {
+        echo '<table class="widefat fixed striped"><thead><tr><th>Imię</th><th>Sprzęt</th><th>Ocena</th><th>Opinia</th><th>Data</th><th>Akcje</th></tr></thead><tbody>';
+        foreach ($reviews as $review) {
+            echo '<tr>';
+            echo '<td>' . esc_html($review->name) . '</td>';
+            echo '<td>' . esc_html($review->equipment) . '</td>';
+            echo '<td style="color:#ffe600;font-weight:900;">' . str_repeat('★', intval($review->stars)) . str_repeat('☆', 5-intval($review->stars)) . '</td>';
+            echo '<td>' . esc_html($review->text) . '</td>';
+            echo '<td>' . date('d.m.Y H:i', strtotime($review->created_at)) . '</td>';
+            echo '<td><a href="' . admin_url('admin.php?page=karcher_reviews_admin&delete_review=' . intval($review->id)) . '" onclick="return confirm(\'Na pewno usunąć tę opinię?\');" class="button button-small">Usuń</a></td>';
+            echo '</tr>';
+        }
+        echo '</tbody></table>';
+    } else {
+        echo '<p>Brak opinii do wyświetlenia.</p>';
+    }
+    echo '</div>';
+}
