@@ -73,4 +73,9 @@ html { margin-top: 0 !important; }
   .reviews-section {padding: 16px 2vw 16px 2vw;}
   .review-form-section {padding: 12px 2vw 12px 2vw;}
   .review-item {padding: 10px 2vw 10px 2vw;}
+  .average-rating-section { padding: 8px 2vw 8px 2vw; }
+  .average-rating-title { font-size: 1em; }
+  .average-rating-stars { font-size: 1.1em; gap: 4px; flex-direction: column; align-items: center; }
+  .average-rating-stars-inner { gap: 4px; }
+  .average-rating-value, .average-rating-count { margin-left: 6px; font-size: 0.6em; }
 }

@@ -112,6 +112,43 @@ wp_enqueue_style(
     </div>
 </section>
 
+<?php
+$avg_rating = 0;
+$reviews_count = 0;
+global $wpdb;
+$table = $wpdb->prefix . 'karcher_reviews';
+$avg = $wpdb->get_row("SELECT AVG(stars) as avg, COUNT(*) as cnt FROM $table");
+if ($avg && $avg->cnt > 0) {
+    $avg_rating = round($avg->avg, 2);
+    $reviews_count = intval($avg->cnt);
+}
+?>
+
+<section class="average-rating-section">
+  <h2 class="average-rating-title">Średnia ocena klientów</h2>
+  <div class="average-rating-stars">
+    <span class="average-rating-stars-inner">
+    <?php
+    $full = floor($avg_rating);
+    $part = $avg_rating - $full;
+
+    for ($i = 1; $i <= 5; $i++) {
+      if ($i <= $full) {
+        echo '<span class="star full">★</span>';
+      } elseif ($i == $full + 1 && $part > 0) {
+        $percent = round($part * 100);
+        echo '<span class="star partial" style="--fill-width: '.$percent.'%">★</span>';
+      } else {
+        echo '<span class="star empty">★</span>';
+      }
+    }
+    ?>
+    </span>
+    <span class="average-rating-value"><?php echo esc_html($avg_rating); ?>/5</span>
+    <span class="average-rating-count">(<?php echo esc_html($reviews_count); ?> opinii)</span>
+  </div>
+</section>
+
 <p class="slogan"><strong>Wypożyczalnia Kärcher – Twój partner w czystości i porządku!</strong></p>
 
 <script src="<?php echo get_template_directory_uri(); ?>/assets/js/equipment-animations.js"></script>
