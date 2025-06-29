@@ -1,11 +1,28 @@
 <?php
-// ...existing code...
-
-add_action('wp_enqueue_scripts', function() {
-  if (is_front_page() || is_page_template('front-page.php')) {
-    wp_enqueue_style('front-page-css', get_template_directory_uri() . '/assets/css/front-page.css', [], null);
-  }
-});
+wp_enqueue_style(
+    'strona-karcher-global',
+    get_template_directory_uri() . '/assets/css/global.css',
+    [],
+    null
+);
+wp_enqueue_style(
+    'strona-karcher-header',
+    get_template_directory_uri() . '/assets/css/header.css',
+    ['strona-karcher-global'],
+    null
+);
+wp_enqueue_style(
+    'strona-karcher-footer',
+    get_template_directory_uri() . '/assets/css/footer.css',
+    ['strona-karcher-global'],
+    null
+);
+wp_enqueue_style(
+    'front-page-css',
+    get_template_directory_uri() . '/assets/css/front-page.css',
+    ['strona-karcher-global','strona-karcher-header','strona-karcher-footer'],
+    null
+);
 ?>
 
 <?php get_header(); ?>

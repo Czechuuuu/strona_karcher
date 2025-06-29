@@ -1,0 +1,159 @@
+/* === HEADER & LOGO === */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: #222;
+  color: #fff;
+  padding: 0.7rem 0;
+  text-align: center;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  transition: box-shadow 0.3s;
+  min-height: 80px;
+}
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 0 8px;
+  gap: 8px;
+  min-height: 60px;
+}
+.header-logo {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-right: 48px;
+}
+.logo-img-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 110px;
+  width: 130px;
+  max-width: 100vw;
+  background: none;
+  padding: 0;
+  margin: 0 8px 0 0;
+}
+.logo-img {
+  max-height: 100px;
+  max-width: 120px;
+  width: auto;
+  height: auto;
+  display: block;
+}
+.logo-text {
+  font-size: 2.5em;
+  font-weight: 900;
+  letter-spacing: 1.5px;
+  color: #ffe600;
+  text-shadow: 0 2px 12px #222a, 0 1px 0 #fff;
+  text-transform: uppercase;
+}
+
+/* === MENU & NAVIGATION === */
+nav {
+  flex: 1 1 auto;
+}
+.main-menu {
+  display: flex;
+  gap: 1.5rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.main-menu li {
+  display: inline-block;
+}
+.main-menu a {
+  display: inline-block;
+  padding: 0.6em 1.2em;
+  text-decoration: none;
+  color: #fff;
+  background-color: #009fe3;
+  border-radius: 6px;
+  transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
+  font-weight: 500;
+  position: relative;
+}
+.main-menu a:hover,
+.main-menu .current-menu-item > a,
+.main-menu .current_page_item > a {
+  background-color: #ffe600;
+  color: #222;
+  box-shadow: 0 2px 12px #ffe60044;
+}
+.main-menu .current-menu-item > a::after,
+.main-menu .current_page_item > a::after {
+  content: '';
+  display: block;
+  height: 4px;
+  width: 70%;
+  background: linear-gradient(90deg, #ffe600 0%, #009fe3 100%);
+  border-radius: 2px;
+  margin: 6px auto 0 auto;
+  opacity: 0.9;
+}
+
+/* === HAMBURGER MENU === */
+.hamburger {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 10px 12px;
+  margin-left: auto;
+  z-index: 120;
+}
+.hamburger-box {
+  width: 32px;
+  height: 24px;
+  display: inline-block;
+  position: relative;
+}
+.hamburger-inner {
+  display: block;
+  top: 50%;
+  margin-top: -2px;
+  width: 32px;
+  height: 4px;
+  background: #009fe3;
+  border-radius: 3px;
+  position: absolute;
+  transition: all 0.3s;
+}
+.hamburger-inner::before,
+.hamburger-inner::after {
+  content: '';
+  position: absolute;
+  width: 32px;
+  height: 4px;
+  background: #009fe3;
+  border-radius: 3px;
+  transition: all 0.3s;
+}
+.hamburger-inner::before { top: -10px; }
+.hamburger-inner::after { bottom: -10px; }
+.hamburger.active .hamburger-inner { background: transparent; }
+.hamburger.active .hamburger-inner::before { transform: translateY(10px) rotate(45deg); }
+.hamburger.active .hamburger-inner::after { transform: translateY(-10px) rotate(-45deg); }
+.hamburger-label {
+  display: none;
+  margin-left: 10px;
+  font-size: 1.08em;
+  color: #009fe3;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  user-select: none;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+.header-hamburger-wrap {
+  display: none;
+  align-items: center;
+  gap: 8px;
+}

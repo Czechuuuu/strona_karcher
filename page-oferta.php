@@ -1,4 +1,31 @@
 <?php
+wp_enqueue_style(
+    'strona-karcher-global',
+    get_template_directory_uri() . '/assets/css/global.css',
+    [],
+    null
+);
+wp_enqueue_style(
+    'strona-karcher-header',
+    get_template_directory_uri() . '/assets/css/header.css',
+    ['strona-karcher-global'],
+    null
+);
+wp_enqueue_style(
+    'strona-karcher-footer',
+    get_template_directory_uri() . '/assets/css/footer.css',
+    ['strona-karcher-global'],
+    null
+);
+wp_enqueue_style(
+    'oferta-css',
+    get_template_directory_uri() . '/assets/css/oferta.css',
+    ['strona-karcher-global','strona-karcher-header','strona-karcher-footer'],
+    null
+);
+?>
+
+<?php
 $categories = [
     'all' => [
         'name' => 'Wszystkie',
@@ -117,9 +144,4 @@ wp_enqueue_script('oferta-category', get_template_directory_uri() . '/assets/js/
 <?php get_footer(); ?>
 
 <?php
-add_action('wp_enqueue_scripts', function() {
-  if (is_page_template('page-oferta.php') || is_page('oferta')) {
-    wp_enqueue_style('oferta-css', get_template_directory_uri() . '/assets/css/oferta.css', [], null);
-  }
-});
 ?>

@@ -1,4 +1,31 @@
 <?php
+wp_enqueue_style(
+    'strona-karcher-global',
+    get_template_directory_uri() . '/assets/css/global.css',
+    [],
+    null
+);
+wp_enqueue_style(
+    'strona-karcher-header',
+    get_template_directory_uri() . '/assets/css/header.css',
+    ['strona-karcher-global'],
+    null
+);
+wp_enqueue_style(
+    'strona-karcher-footer',
+    get_template_directory_uri() . '/assets/css/footer.css',
+    ['strona-karcher-global'],
+    null
+);
+wp_enqueue_style(
+    'opinie-css',
+    get_template_directory_uri() . '/assets/css/opinie.css',
+    ['strona-karcher-global','strona-karcher-header','strona-karcher-footer'],
+    null
+);
+?>  
+
+<?php
 global $wpdb;
 get_header();
 
@@ -42,14 +69,6 @@ if ($equipment_query->have_posts()) {
 }
 
 $reviews = $wpdb->get_results("SELECT * FROM {$wpdb->prefix}karcher_reviews ORDER BY created_at DESC LIMIT 20");
-?>
-
-<?php
-add_action('wp_enqueue_scripts', function() {
-  if (is_page_template('page-opinie.php') || is_page('opinie')) {
-    wp_enqueue_style('opinie-css', get_template_directory_uri() . '/assets/css/opinie.css', [], null);
-  }
-});
 ?>
 
 <section class="reviews-section">

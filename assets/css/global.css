@@ -1,1 +1,289 @@
-/* Plik nieużywany – style przeniesione do style.css */
+/* === KAFELKI SPRZĘTU === */
+.equipment {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px;
+  justify-content: center;
+  margin: 40px 0 30px 0;
+}
+.equipment-item {
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 2px 18px #009fe322;
+  padding: 28px 24px 18px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 320px;
+  min-width: 220px;
+  min-height: 420px;
+  transition: box-shadow 0.2s, transform 0.2s;
+  margin-bottom: 18px;
+  position: relative;
+}
+.equipment-item:hover {
+  box-shadow: 0 8px 32px #009fe344;
+  transform: translateY(-4px) scale(1.03);
+}
+.equipment-item .image {
+  width: 100%;
+  height: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 18px;
+}
+.equipment-item .image img {
+  max-width: 100%;
+  max-height: 160px;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px #009fe322;
+  object-fit: contain;
+}
+.equipment-item h3 {
+  font-size: 1.35em;
+  font-weight: 900;
+  color: #009fe3;
+  margin: 0 0 10px 0;
+  text-align: center;
+}
+.equipment-item .description {
+  color: #222;
+  font-size: 1.08em;
+  margin-bottom: 12px;
+  text-align: center;
+}
+.equipment-item .price {
+  color: #222;
+  font-weight: 700;
+  font-size: 1.4em;
+  margin-bottom: 4px;
+  text-align: center;
+}
+.equipment-item .deposit {
+  color: #009fe3;
+  font-weight: 700;
+  font-size: 1.08em;
+  margin-bottom: 8px;
+  text-align: center;
+}
+.equipment-item .button {
+  background: #009fe3;
+  color: #fff;
+  border-radius: 8px;
+  padding: 10px 28px;
+  font-size: 1.08em;
+  font-weight: 700;
+  text-decoration: none;
+  box-shadow: 0 2px 12px #009fe344;
+  transition: background 0.3s, color 0.3s, box-shadow 0.3s;
+  border: none;
+  display: inline-block;
+  margin-top: 10px;
+}
+.equipment-item .button:hover {
+  background: #ffe600;
+  color: #222;
+  box-shadow: 0 4px 18px #ffe60044;
+}
+
+/* === CTA === */
+.cta-buttons {
+  display: flex;
+  gap: 24px;
+  justify-content: center;
+  margin: 32px 0 0 0;
+  flex-wrap: wrap;
+}
+.button.cta, .button.cta-alt {
+  background: #009fe3;
+  color: #fff;
+  border-radius: 8px;
+  padding: 14px 36px;
+  font-size: 1.15em;
+  font-weight: 700;
+  text-decoration: none;
+  box-shadow: 0 2px 12px #009fe344;
+  transition: background 0.3s, color 0.3s, box-shadow 0.3s;
+  border: none;
+  display: inline-block;
+}
+.button.cta:hover {
+  background: #ffe600;
+  color: #222;
+  box-shadow: 0 4px 18px #ffe60044;
+}
+.button.cta-alt {
+  background: #ffe600;
+  color: #222;
+}
+.button.cta-alt:hover {
+  background: #009fe3;
+  color: #fff;
+}
+
+/* === HERO & OFERTA HERO === */
+.hero {
+  background: linear-gradient(90deg, #ffe600 0%, #fff700 100%);
+  color: #222;
+  padding: 40px 20px;
+  text-align: center;
+  border-bottom: 4px solid #009fe3;
+}
+.hero.oferta-hero {
+  background: #fff url('https://www.transparenttextures.com/patterns/diamond-upholstery.png');
+  background-size: 340px 340px;
+  border-bottom: 4px solid #009fe3;
+  color: #222;
+  box-shadow: 0 6px 32px #009fe322;
+  position: relative;
+}
+.hero.oferta-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(120deg, #ffe600 0%, #fff 60%, #009fe3 100%);
+  opacity: 0.13;
+  z-index: 0;
+  pointer-events: none;
+}
+.hero.oferta-hero > * {
+  position: relative;
+  z-index: 1;
+}
+.popular-equipment h2 {
+  text-align: center;
+}
+
+/* === ANIMACJE === */
+.pop-anim {
+  animation: popIn 0.7s cubic-bezier(.68,-0.55,.27,1.55);
+}
+@keyframes popIn {
+  0% { transform: scale(0.7); opacity: 0; }
+  80% { transform: scale(1.08); opacity: 1; }
+  100% { transform: scale(1); }
+}
+
+/* === SHARED HERO/GRADIENT BG === */
+.section-gradient-bg, .hero, .oferta-hero, .faq-section, .reservation-section, .reviews-section {
+  position: relative;
+  background: #fff url('https://www.transparenttextures.com/patterns/diamond-upholstery.png');
+  background-size: 340px 340px;
+}
+.section-gradient-bg::before, .hero::before, .oferta-hero::before, .faq-section::before, .reservation-section::before, .reviews-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(120deg, #ffe600 0%, #fff 60%, #009fe3 100%);
+  opacity: 0.13;
+  z-index: 0;
+  pointer-events: none;
+}
+.section-gradient-bg > *, .hero > *, .oferta-hero > *, .faq-section > *, .reservation-section > *, .reviews-section > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* === MENU & NAVIGATION === */
+nav {
+  flex: 1 1 auto;
+}
+.main-menu {
+  display: flex;
+  gap: 1.5rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.main-menu li {
+  display: inline-block;
+}
+.main-menu a {
+  display: inline-block;
+  padding: 0.6em 1.2em;
+  text-decoration: none;
+  color: #fff;
+  background-color: #009fe3;
+  border-radius: 6px;
+  transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
+  font-weight: 500;
+  position: relative;
+}
+.main-menu a:hover,
+.main-menu .current-menu-item > a,
+.main-menu .current_page_item > a {
+  background-color: #ffe600;
+  color: #222;
+  box-shadow: 0 2px 12px #ffe60044;
+}
+.main-menu .current-menu-item > a::after,
+.main-menu .current_page_item > a::after {
+  content: '';
+  display: block;
+  height: 4px;
+  width: 70%;
+  background: linear-gradient(90deg, #ffe600 0%, #009fe3 100%);
+  border-radius: 2px;
+  margin: 6px auto 0 auto;
+  opacity: 0.9;
+}
+
+/* === HAMBURGER MENU === */
+.hamburger {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 10px 12px;
+  margin-left: auto;
+  z-index: 120;
+}
+.hamburger-box {
+  width: 32px;
+  height: 24px;
+  display: inline-block;
+  position: relative;
+}
+.hamburger-inner {
+  display: block;
+  top: 50%;
+  margin-top: -2px;
+  width: 32px;
+  height: 4px;
+  background: #009fe3;
+  border-radius: 3px;
+  position: absolute;
+  transition: all 0.3s;
+}
+.hamburger-inner::before,
+.hamburger-inner::after {
+  content: '';
+  position: absolute;
+  width: 32px;
+  height: 4px;
+  background: #009fe3;
+  border-radius: 3px;
+  transition: all 0.3s;
+}
+.hamburger-inner::before { top: -10px; }
+.hamburger-inner::after { bottom: -10px; }
+.hamburger.active .hamburger-inner { background: transparent; }
+.hamburger.active .hamburger-inner::before { transform: translateY(10px) rotate(45deg); }
+.hamburger.active .hamburger-inner::after { transform: translateY(-10px) rotate(-45deg); }
+.hamburger-label {
+  display: none;
+  margin-left: 10px;
+  font-size: 1.08em;
+  color: #009fe3;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  user-select: none;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+.header-hamburger-wrap {
+  display: none;
+  align-items: center;
+  gap: 8px;
+}

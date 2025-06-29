@@ -1,4 +1,31 @@
 <?php
+wp_enqueue_style(
+    'strona-karcher-global',
+    get_template_directory_uri() . '/assets/css/global.css',
+    [],
+    null
+);
+wp_enqueue_style(
+    'strona-karcher-header',
+    get_template_directory_uri() . '/assets/css/header.css',
+    ['strona-karcher-global'],
+    null
+);
+wp_enqueue_style(
+    'strona-karcher-footer',
+    get_template_directory_uri() . '/assets/css/footer.css',
+    ['strona-karcher-global'],
+    null
+);
+wp_enqueue_style(
+    'rezerwacja-css',
+    get_template_directory_uri() . '/assets/css/rezerwacja.css',
+    ['strona-karcher-global','strona-karcher-header','strona-karcher-footer'],
+    null
+);
+?>
+
+<?php
 get_header(); ?>
 
 <section class="reservation-section">

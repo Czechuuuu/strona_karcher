@@ -1,10 +1,28 @@
 <?php
-// Dodanie ładowania dedykowanego CSS tylko na stronie FAQ
-add_action('wp_enqueue_scripts', function() {
-  if (is_page_template('page-faq.php') || is_page('faq')) {
-    wp_enqueue_style('faq-css', get_template_directory_uri() . '/assets/css/faq.css', [], null);
-  }
-});
+wp_enqueue_style(
+    'strona-karcher-global',
+    get_template_directory_uri() . '/assets/css/global.css',
+    [],
+    null
+);
+wp_enqueue_style(
+    'strona-karcher-header',
+    get_template_directory_uri() . '/assets/css/header.css',
+    ['strona-karcher-global'],
+    null
+);
+wp_enqueue_style(
+    'strona-karcher-footer',
+    get_template_directory_uri() . '/assets/css/footer.css',
+    ['strona-karcher-global'],
+    null
+);
+wp_enqueue_style(
+    'faq-css',
+    get_template_directory_uri() . '/assets/css/faq.css',
+    ['strona-karcher-global','strona-karcher-header','strona-karcher-footer'],
+    null
+);
 ?>
 
 <?php get_header(); ?>
