@@ -1,4 +1,5 @@
-/* === HEADER & LOGO === */
+/* NAGŁÓWEK I LOGO */
+
 header {
   position: sticky;
   top: 0;
@@ -8,9 +9,10 @@ header {
   padding: 0.7rem 0;
   text-align: center;
   box-shadow: 0 2px 12px rgba(0,0,0,0.08);
-  transition: box-shadow 0.3s;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease, backdrop-filter 0.3s ease;
   min-height: 80px;
 }
+
 .header-inner {
   display: flex;
   align-items: center;
@@ -21,6 +23,7 @@ header {
   gap: 8px;
   min-height: 60px;
 }
+
 .header-logo {
   flex-shrink: 0;
   display: flex;
@@ -28,6 +31,15 @@ header {
   gap: 12px;
   margin-right: 48px;
 }
+
+.header-logo a {
+  color: white;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
 .logo-img-wrap {
   display: flex;
   align-items: center;
@@ -39,13 +51,16 @@ header {
   padding: 0;
   margin: 0 8px 0 0;
 }
+
 .logo-img {
   max-height: 100px;
   max-width: 120px;
   width: auto;
   height: auto;
   display: block;
+  border-radius: 12px;
 }
+
 .logo-text {
   font-size: 2.5em;
   font-weight: 900;
@@ -55,10 +70,29 @@ header {
   text-transform: uppercase;
 }
 
-/* === MENU & NAVIGATION === */
+header.header-transparent {
+  background-color: transparent;
+  box-shadow: none;
+  backdrop-filter: none;
+}
+
+header.header-scrolled {
+  background-color: #222;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.15);
+  backdrop-filter: blur(10px);
+}
+
+header.header-transparent .logo-text {
+  color: #009fe3;
+  text-shadow: 0 2px 8px rgba(255,255,255,0.8), 0 1px 0 #fff;
+}
+
+/* MENU I NAWIGACJA */
+
 nav {
   flex: 1 1 auto;
 }
+
 .main-menu {
   display: flex;
   gap: 1.5rem;
@@ -66,9 +100,11 @@ nav {
   padding: 0;
   margin: 0;
 }
+
 .main-menu li {
   display: inline-block;
 }
+
 .main-menu a {
   display: inline-block;
   padding: 0.6em 1.2em;
@@ -80,6 +116,7 @@ nav {
   font-weight: 500;
   position: relative;
 }
+
 .main-menu a:hover,
 .main-menu .current-menu-item > a,
 .main-menu .current_page_item > a {
@@ -87,6 +124,7 @@ nav {
   color: #222;
   box-shadow: 0 2px 12px #ffe60044;
 }
+
 .main-menu .current-menu-item > a::after,
 .main-menu .current_page_item > a::after {
   content: '';
@@ -99,7 +137,22 @@ nav {
   opacity: 0.9;
 }
 
-/* === HAMBURGER MENU === */
+header.header-transparent .main-menu a {
+  background-color: rgba(0, 159, 227, 0.9);
+  color: #fff;
+  backdrop-filter: blur(5px);
+}
+
+header.header-transparent .main-menu a:hover,
+header.header-transparent .main-menu .current-menu-item > a,
+header.header-transparent .main-menu .current_page_item > a {
+  background-color: #ffe600;
+  color: #222;
+  box-shadow: 0 2px 12px rgba(255, 230, 0, 0.4);
+}
+
+/* MENU HAMBURGER */
+
 .hamburger {
   display: none;
   background: none;
@@ -108,13 +161,17 @@ nav {
   padding: 10px 12px;
   margin-left: auto;
   z-index: 120;
+  position: relative;
+  transform: none;
 }
+
 .hamburger-box {
   width: 32px;
   height: 24px;
   display: inline-block;
   position: relative;
 }
+
 .hamburger-inner {
   display: block;
   top: 50%;
@@ -126,6 +183,7 @@ nav {
   position: absolute;
   transition: all 0.3s;
 }
+
 .hamburger-inner::before,
 .hamburger-inner::after {
   content: '';
@@ -136,11 +194,27 @@ nav {
   border-radius: 3px;
   transition: all 0.3s;
 }
-.hamburger-inner::before { top: -10px; }
-.hamburger-inner::after { bottom: -10px; }
-.hamburger.active .hamburger-inner { background: transparent; }
-.hamburger.active .hamburger-inner::before { transform: translateY(10px) rotate(45deg); }
-.hamburger.active .hamburger-inner::after { transform: translateY(-10px) rotate(-45deg); }
+
+.hamburger-inner::before { 
+  top: -10px; 
+}
+
+.hamburger-inner::after { 
+  bottom: -10px; 
+}
+
+.hamburger.active .hamburger-inner { 
+  background: transparent; 
+}
+
+.hamburger.active .hamburger-inner::before { 
+  transform: translateY(10px) rotate(45deg); 
+}
+
+.hamburger.active .hamburger-inner::after { 
+  transform: translateY(-10px) rotate(-45deg); 
+}
+
 .hamburger-label {
   display: none;
   margin-left: 10px;
@@ -152,8 +226,24 @@ nav {
   cursor: pointer;
   transition: color 0.2s;
 }
+
 .header-hamburger-wrap {
   display: none;
   align-items: center;
   gap: 8px;
+}
+
+header.header-transparent .hamburger {
+  padding: 10px 12px;
+  transform: none;
+}
+
+header.header-transparent .hamburger-inner,
+header.header-transparent .hamburger-inner::before,
+header.header-transparent .hamburger-inner::after {
+  background: #009fe3;
+}
+
+header.header-transparent .hamburger-label {
+  color: #009fe3;
 }

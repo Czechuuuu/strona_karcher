@@ -152,13 +152,6 @@ if ($avg && $avg->cnt > 0) {
 <p class="slogan"><strong>Wypożyczalnia Kärcher – Twój partner w czystości i porządku!</strong></p>
 
 <script src="<?php echo get_template_directory_uri(); ?>/assets/js/equipment-animations.js"></script>
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-  const homeEquipment = document.querySelectorAll('.equipment-home .equipment-item');
-  if(homeEquipment.length > 0 && window.animateEquipmentItems) {
-    window.animateEquipmentItems(homeEquipment);
-  }
-});
-</script>
+<script src="<?php echo get_template_directory_uri(); ?>/assets/js/home-animations.js"></script>
 
 <?php get_footer(); ?>

@@ -68,12 +68,8 @@ get_header(); ?>
   </div>
 </section>
 
-<?php get_footer(); ?>
+<div class="map-container">
+  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2754.6029029457745!2d18.659061177019627!3d54.406234294894844!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46fd0ca87b90260f%3A0x7335dd8bfb4c64ad!2sPrzemys%C5%82owa%207%2C%2080-001%20Gda%C5%84sk!5e1!3m2!1spl!2spl!4v1751311533662!5m2!1spl!2spl" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+</div>
 
-<?php
-add_action('wp_enqueue_scripts', function() {
-  if (is_page_template('page-rezerwacja.php') || is_page('rezerwacja')) {
-    wp_enqueue_style('rezerwacja-css', get_template_directory_uri() . '/assets/css/rezerwacja.css', [], null);
-  }
-});
-?>
+<?php get_footer(); ?>

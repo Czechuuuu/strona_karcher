@@ -1,4 +1,4 @@
-/* === KAFELKI SPRZĘTU === */
+/* KAFELKI SPRZĘTU */
 .equipment {
   display: flex;
   flex-wrap: wrap;
@@ -87,7 +87,7 @@
   box-shadow: 0 4px 18px #ffe60044;
 }
 
-/* === CTA === */
+/* PRZYCISKI CTA */
 .cta-buttons {
   display: flex;
   gap: 24px;
@@ -122,13 +122,34 @@
   color: #fff;
 }
 
-/* === HERO & OFERTA HERO === */
+/* SEKCJA HERO */
 .hero {
-  background: linear-gradient(90deg, #ffe600 0%, #fff700 100%);
+  background: #fff url('https://www.transparenttextures.com/patterns/diamond-upholstery.png');
+  background-size: 340px 340px;
   color: #222;
-  padding: 40px 20px;
+  padding: 120px 20px 40px 20px;
+  margin-top: -135px;
   text-align: center;
   border-bottom: 4px solid #009fe3;
+  position: relative;
+  z-index: 1;
+  box-shadow: 0 6px 32px #009fe322;
+}
+header + .hero {
+  margin-top: -135px;
+}
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(120deg, #ffe600 0%, #fff 60%, #009fe3 100%);
+  opacity: 0.13;
+  z-index: 0;
+  pointer-events: none;
+}
+.hero > * {
+  position: relative;
+  z-index: 1;
 }
 .hero.oferta-hero {
   background: #fff url('https://www.transparenttextures.com/patterns/diamond-upholstery.png');
@@ -137,6 +158,8 @@
   color: #222;
   box-shadow: 0 6px 32px #009fe322;
   position: relative;
+  padding: 120px 20px 40px 20px;
+  margin-top: -135px;
 }
 .hero.oferta-hero::before {
   content: '';
@@ -155,7 +178,7 @@
   text-align: center;
 }
 
-/* === ANIMACJE === */
+/* ANIMACJE */
 .pop-anim {
   animation: popIn 0.7s cubic-bezier(.68,-0.55,.27,1.55);
 }
@@ -165,13 +188,13 @@
   100% { transform: scale(1); }
 }
 
-/* === SHARED HERO/GRADIENT BG === */
-.section-gradient-bg, .hero, .oferta-hero, .faq-section, .reservation-section, .reviews-section {
+/* TŁO SEKCJI */
+.section-gradient-bg, .faq-section, .reservation-section, .reviews-section {
   position: relative;
   background: #fff url('https://www.transparenttextures.com/patterns/diamond-upholstery.png');
   background-size: 340px 340px;
 }
-.section-gradient-bg::before, .hero::before, .oferta-hero::before, .faq-section::before, .reservation-section::before, .reviews-section::before {
+.section-gradient-bg::before, .faq-section::before, .reservation-section::before, .reviews-section::before {
   content: '';
   position: absolute;
   inset: 0;
@@ -180,110 +203,7 @@
   z-index: 0;
   pointer-events: none;
 }
-.section-gradient-bg > *, .hero > *, .oferta-hero > *, .faq-section > *, .reservation-section > *, .reviews-section > * {
+.section-gradient-bg > *, .faq-section > *, .reservation-section > *, .reviews-section > * {
   position: relative;
   z-index: 1;
-}
-
-/* === MENU & NAVIGATION === */
-nav {
-  flex: 1 1 auto;
-}
-.main-menu {
-  display: flex;
-  gap: 1.5rem;
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-.main-menu li {
-  display: inline-block;
-}
-.main-menu a {
-  display: inline-block;
-  padding: 0.6em 1.2em;
-  text-decoration: none;
-  color: #fff;
-  background-color: #009fe3;
-  border-radius: 6px;
-  transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
-  font-weight: 500;
-  position: relative;
-}
-.main-menu a:hover,
-.main-menu .current-menu-item > a,
-.main-menu .current_page_item > a {
-  background-color: #ffe600;
-  color: #222;
-  box-shadow: 0 2px 12px #ffe60044;
-}
-.main-menu .current-menu-item > a::after,
-.main-menu .current_page_item > a::after {
-  content: '';
-  display: block;
-  height: 4px;
-  width: 70%;
-  background: linear-gradient(90deg, #ffe600 0%, #009fe3 100%);
-  border-radius: 2px;
-  margin: 6px auto 0 auto;
-  opacity: 0.9;
-}
-
-/* === HAMBURGER MENU === */
-.hamburger {
-  display: none;
-  background: none;
-  border: none;
-  cursor: pointer;
-  padding: 10px 12px;
-  margin-left: auto;
-  z-index: 120;
-}
-.hamburger-box {
-  width: 32px;
-  height: 24px;
-  display: inline-block;
-  position: relative;
-}
-.hamburger-inner {
-  display: block;
-  top: 50%;
-  margin-top: -2px;
-  width: 32px;
-  height: 4px;
-  background: #009fe3;
-  border-radius: 3px;
-  position: absolute;
-  transition: all 0.3s;
-}
-.hamburger-inner::before,
-.hamburger-inner::after {
-  content: '';
-  position: absolute;
-  width: 32px;
-  height: 4px;
-  background: #009fe3;
-  border-radius: 3px;
-  transition: all 0.3s;
-}
-.hamburger-inner::before { top: -10px; }
-.hamburger-inner::after { bottom: -10px; }
-.hamburger.active .hamburger-inner { background: transparent; }
-.hamburger.active .hamburger-inner::before { transform: translateY(10px) rotate(45deg); }
-.hamburger.active .hamburger-inner::after { transform: translateY(-10px) rotate(-45deg); }
-.hamburger-label {
-  display: none;
-  margin-left: 10px;
-  font-size: 1.08em;
-  color: #009fe3;
-  font-weight: 700;
-  letter-spacing: 0.5px;
-  user-select: none;
-  cursor: pointer;
-  transition: color 0.2s;
-}
-.header-hamburger-wrap {
-  display: none;
-  align-items: center;
-  gap: 8px;
 }

@@ -25,6 +25,8 @@ wp_enqueue_style(
 );
 ?>
 
+<script src="<?php echo get_template_directory_uri(); ?>/assets/js/faq.js"></script>
+
 <?php get_header(); ?>
 
 <section class="faq-section">

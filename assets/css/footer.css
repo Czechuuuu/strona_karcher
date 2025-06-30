@@ -1,4 +1,4 @@
-/* === FOOTER / SOCIAL / LEGAL === */
+/* STOPKA */
 footer {
   background-color: #222;
   color: #fff;
@@ -19,6 +19,14 @@ footer {
   padding: 24px 0 10px 0;
   border-bottom: 1.5px solid #202020;
 }
+.footer-bottom {
+  text-align: center;
+  color: #bdbdbd;
+  font-size: 0.98em;
+  padding: 12px 0 0 0;
+}
+
+/* LOGO I MARKA STOPKI */
 .footer-logo-block {
   display: flex;
   align-items: center;
@@ -48,6 +56,8 @@ footer {
   margin-right: 0;
   text-shadow: 0 2px 12px #222a, 0 1px 0 #fff;
 }
+
+/* KONTAKT STOPKI */
 .footer-contact {
   font-size: 1.1em;
   color: #fff;
@@ -68,6 +78,7 @@ footer {
   font-weight: 700;
   text-decoration: none !important;
   padding-left: 6px;
+  transition: color 0.2s;
 }
 .footer-contact a:hover,
 .footer-contact-link:hover {
@@ -96,23 +107,8 @@ footer {
   box-shadow: 0 8px 32px #ffe60044, 0 1.5px 0 #009fe3 inset;
   transform: translateY(-2px) scale(1.04);
 }
-.footer-contact-link {
-  color: #ffe600;
-  font-weight: 700;
-  text-decoration: none;
-  padding-left: 6px;
-  transition: color 0.2s;
-}
-.footer-contact-link:hover {
-  color: #009fe3;
-  text-decoration: none;
-}
-.footer-bottom {
-  text-align: center;
-  color: #bdbdbd;
-  font-size: 0.98em;
-  padding: 12px 0 0 0;
-}
+
+/* MEDIA SPOŁECZNOŚCIOWE I LINKI PRAWNE */
 .footer-socials {
   display: flex;
   gap: 18px;

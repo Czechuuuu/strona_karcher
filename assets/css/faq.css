@@ -1,4 +1,4 @@
-/* === FAQ === */
+/* CZĘSTO ZADAWANE PYTANIA */
 .faq-section {
   max-width: 800px;
   margin: 48px auto 32px auto;
@@ -27,6 +27,13 @@
   padding: 0;
   overflow: hidden;
 }
+.faq-item.open .faq-question {
+  background: #ffe600;
+  color: #222;
+}
+.faq-item.open .faq-answer {
+  display: block;
+}
 .faq-question {
   width: 100%;
   background: #009fe3;
@@ -40,7 +47,7 @@
   outline: none;
   transition: background 0.2s, color 0.2s;
 }
-.faq-question:hover, .faq-item.open .faq-question {
+.faq-question:hover {
   background: #ffe600;
   color: #222;
 }
@@ -53,9 +60,7 @@
   font-size: 1em;
   animation: fadeInFaq 0.3s;
 }
-.faq-item.open .faq-answer {
-  display: block;
-}
+
 @keyframes fadeInFaq {
   from { opacity: 0; transform: translateY(-10px); }
   to { opacity: 1; transform: translateY(0); }

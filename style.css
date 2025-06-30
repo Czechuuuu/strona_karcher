@@ -10,57 +10,52 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: strona_karcher
 */
 
-/* === BASE === */
+/* PODSTAWOWE STYLE */
 body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
   background-color: #f7f7f7;
-  padding-top: 0;
 }
 html { margin-top: 0 !important; }
 #wpadminbar { display: none !important; }
 
-/* === MEDIA QUERIES === */
+/* MEDIA QUERIES */
+
+/* Ekrany do 1400px */
 @media (max-width: 1400px) {
   .equipment { max-width: 990px; }
   .equipment-item { max-width: 300px; min-height: 420px; padding: 20px; }
 }
+
+/* Ekrany do 1050px */
 @media (max-width: 1050px) {
   .equipment { max-width: 660px; }
   .equipment-item { max-width: 320px; min-width: 180px; }
 }
+
+/* Ekrany do 700px */
 @media (max-width: 700px) {
-  .header-inner { min-height: 36px; gap: 10px; }
+  .header-inner { min-height: 70px; gap: 10px; }
   .logo-img-wrap { height: 40px; width: 44px; }
   .logo-img { max-height: 36px; max-width: 40px; }
   .logo-text { font-size: 1em; }
+  .hero, .hero.oferta-hero { padding: 110px 20px 30px 20px; margin-top: -120px; }
   .equipment { flex-direction: column; align-items: center; gap: 18px; }
   .equipment-item { max-width: 98vw; min-width: 0; padding: 18px 8px 14px 8px; }
   .equipment-item .image { height: 120px; margin-bottom: 10px; }
   .equipment-item h3 { font-size: 1.1em; }
+  .map-container { margin: 30px auto; padding: 0 15px; box-sizing: border-box;text-align: center; }
+  .map-container iframe { height: 350px;max-width: 100%;margin: 0 auto;display: block; }
 }
+
+/* Ekrany do 600px - telefony */
 @media (max-width: 600px) {
-  .about-us-main { flex-direction: column; gap: 24px; padding: 18px 8px; }
-  .about-us-text, .about-us-img { width: 100%; }
-  .about-us-main { gap: 16px; margin: 18px 0 10px 0; }
-  .about-us-text { font-size: 1em; }
-  header { min-height: 60px; padding: 0.3rem 0; }
-  .header-inner { min-height: 40px; gap: 8px; padding: 0 6px; }
-  .logo-img-wrap { height: 60px; width: 70px; }
-  .logo-img { max-height: 50px; max-width: 60px; }
-  .logo-text { font-size: 1.3em; }
-  .header-logo { margin-right: 24px; }
-  .slogan { font-size: 1.1em; padding: 10px 8px; margin: 24px 0 18px 0; }
-  .reservation-section { max-width: 98vw; padding: 12px 2vw 18px 2vw; margin: 18px 0 10px 0; }
-  .reservation-flex { flex-direction: column; gap: 24px; }
-  .reservation-image-box { margin-top: 18px; padding: 12px; }
-  .reservation-envelope-large { max-width: 320px; padding: 8px; }
-  .reservation-envelope { width: 28px; height: 28px; margin-right: 6px; margin-bottom: 2px; }
-  .reservation-info-box { max-width: 100%; padding: 18px 10px; margin-top: 18px; }
-  .footer-social-icon { width: 28px; height: 28px; }
-  .header-inner { flex-direction: column; align-items: center; gap: 12px; padding: 12px 0 0 0; min-height: unset; }
+  /* Nagłówek i nawigacja */
+  header { padding: 0.5rem 0; }
+  .header-inner { flex-direction: column; align-items: center; gap: 12px; min-height: unset; }
   .header-logo { justify-content: center; width: 100%; margin-right: 0; }
+  .logo-img-wrap { height: 60px; width: 70px; }
   .logo-img { max-width: 60px; height: auto; }
   .logo-text { font-size: 1.1em; text-align: center; }
   nav { width: 100%; margin-top: 10px; overflow-x: auto; max-width: 100vw; position: absolute; top: 100%; left: 0; background: #222; box-shadow: 0 2px 12px #0002; z-index: 110; display: none; }
@@ -69,7 +64,30 @@ html { margin-top: 0 !important; }
   .main-menu li { width: 100vw; text-align: center; margin: 0; padding: 12px 0; box-sizing: border-box; }
   .hamburger { display: block; }
   .hamburger-label { display: inline-block; vertical-align: middle; }
-  .header-hamburger-wrap { display: flex; margin-left: auto; margin-right: 0; height: 48px; }
+  .header-hamburger-wrap { display: flex; margin-left: auto; margin-right: auto; height: 48px; justify-content: center; align-items: center; gap: 8px; }
+  header.header-transparent .hamburger { background: none; border-radius: 0; backdrop-filter: none; box-shadow: none; padding: 10px 12px; display: flex; align-items: center; justify-content: center; width: auto; height: auto; transform: none; position: relative; }
+  header.header-transparent .hamburger-box { position: relative; width: 32px; height: 24px; }
+  header.header-transparent .hamburger-inner { position: absolute; top: 50%; left: 0; transform: translateY(-50%); margin-top: 0; background: #009fe3; }
+  header.header-transparent .hamburger-inner::before, header.header-transparent .hamburger-inner::after { background: #009fe3; }
+  header.header-transparent .logo-text { color: #009fe3; text-shadow: 0 2px 8px rgba(255,255,255,0.95), 0 1px 0 #fff, 0 0 15px rgba(255,255,255,0.8); font-weight: 900; }
+
+  /* Sekcja hero */
+  .hero, .hero.oferta-hero { padding: 120px 15px 25px 15px; margin-top: -140px; }
+
+  /* O nas */
+  .about-us-main { flex-direction: column; gap: 24px; padding: 18px 8px; margin: 18px 0 10px 0; }
+  .about-us-text, .about-us-img { width: 100%; }
+  .about-us-text { font-size: 1em; }
+
+  /* Rezerwacja */
+  .reservation-section { max-width: 98vw; padding: 12px 2vw 18px 2vw; margin: 18px 0 10px 0; }
+  .reservation-flex { flex-direction: column; gap: 24px; }
+  .reservation-image-box { margin-top: 18px; padding: 12px; }
+  .reservation-envelope-large { max-width: 320px; padding: 8px; }
+  .reservation-envelope { width: 28px; height: 28px; margin-right: 6px; margin-bottom: 2px; }
+  .reservation-info-box { max-width: 100%; padding: 18px 10px; margin-top: 18px; }
+
+  /* Opinie */
   .reviews-section {padding: 16px 2vw 16px 2vw;}
   .review-form-section {padding: 12px 2vw 12px 2vw;}
   .review-item {padding: 10px 2vw 10px 2vw;}
@@ -78,4 +96,12 @@ html { margin-top: 0 !important; }
   .average-rating-stars { font-size: 1.1em; gap: 4px; flex-direction: column; align-items: center; }
   .average-rating-stars-inner { gap: 4px; }
   .average-rating-value, .average-rating-count { margin-left: 6px; font-size: 0.6em; }
+
+  /* Slogan i stopka */
+  .slogan { font-size: 1.1em; padding: 10px 8px; margin: 24px 0 18px 0; }
+  .footer-social-icon { width: 28px; height: 28px; }
+
+  /* Mapa */
+  .map-container { margin: 20px auto; padding: 0 10px; text-align: center; }
+  .map-container iframe { height: 250px; max-width: 100%; margin: 0 auto; display: block; }
 }

@@ -5,13 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <?php wp_head(); ?>
     <script defer src="<?php echo get_template_directory_uri(); ?>/assets/js/hamburger.js"></script>
+    <?php 
+    if (is_front_page() || is_page('oferta')) : ?>
+        <script defer src="<?php echo get_template_directory_uri(); ?>/assets/js/header-bg.js"></script>
+    <?php endif; ?>
 </head>
 <body <?php body_class(); ?>>
 
 <header>
     <div class="header-inner">
       <div class="header-logo">
-        <a href="<?php echo home_url(); ?>" style="color:white; text-decoration:none; display:flex; align-items:center; gap:12px;">
+        <a href="<?php echo home_url(); ?>">
           <span class="logo-img-wrap">
             <img src="<?php echo get_template_directory_uri(); ?>/assets/images/karcher-logo.png" alt="Karcher" class="logo-img">
           </span>
