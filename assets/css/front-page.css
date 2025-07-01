@@ -44,6 +44,11 @@
   box-shadow: 0 2px 16px #009fe344;
 }
 
+.about-values {
+    list-style: none;
+    padding-left: 0;
+}
+
 /* JAK TO DZIAŁA */
 .how-it-works-section {
   max-width: 900px;
