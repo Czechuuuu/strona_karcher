@@ -17,7 +17,7 @@
       <div class="header-logo">
         <a href="<?php echo home_url(); ?>">
           <span class="logo-img-wrap">
-            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/karcher-logo.png" alt="Karcher" class="logo-img">
+            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/karcher-logo.webp" alt="Karcher" class="logo-img">
           </span>
           <span class="logo-text">Wypożyczalnia Kärcher</span>
         </a>

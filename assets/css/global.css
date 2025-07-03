@@ -127,9 +127,8 @@
   background: #fff url('https://www.transparenttextures.com/patterns/diamond-upholstery.png');
   background-size: 340px 340px;
   color: #222;
-  padding: 120px 20px 40px 20px;
+  padding: 160px 20px 40px 20px;
   margin-top: -135px;
-  text-align: center;
   border-bottom: 4px solid #009fe3;
   position: relative;
   z-index: 1;
@@ -151,6 +150,59 @@ header + .hero {
   position: relative;
   z-index: 1;
 }
+
+.hero-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 48px;
+  max-width: 1200px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+}
+
+.hero-text {
+  flex: 1 1 450px;
+  text-align: center;
+  min-width: 320px;
+}
+
+.hero-text h1 {
+  font-size: 2.2em;
+  font-weight: 900;
+  margin-bottom: 16px;
+  color: #222;
+  line-height: 1.1;
+  white-space: nowrap;
+}
+
+.hero-text p {
+  font-size: 1.2em;
+  margin-bottom: 24px;
+  color: #444;
+  line-height: 1.4;
+}
+
+.hero-image {
+  flex: 1 1 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 250px;
+}
+
+.hero-image img {
+  max-width: 70%;
+  height: auto;
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0, 159, 227, 0.3);
+  transition: transform 0.3s ease;
+}
+
+.hero-image img:hover {
+  transform: scale(1.02);
+}
+
 .hero.oferta-hero {
   background: #fff url('https://www.transparenttextures.com/patterns/diamond-upholstery.png');
   background-size: 340px 340px;
@@ -175,16 +227,17 @@ header + .hero {
   z-index: 1;
 }
 .popular-equipment h2 {
+  font-size: 1.7em;
   text-align: center;
 }
 
 /* ANIMACJE */
 .pop-anim {
-  animation: popIn 0.7s cubic-bezier(.68,-0.55,.27,1.55);
+  animation: popIn 1.5s cubic-bezier(.40,-0.75,.20,1.15);
 }
 @keyframes popIn {
   0% { transform: scale(0.7); opacity: 0; }
-  80% { transform: scale(1.08); opacity: 1; }
+  80% { transform: scale(1); opacity: 1; }
   100% { transform: scale(1); }
 }
 

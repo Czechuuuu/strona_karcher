@@ -1,4 +1,7 @@
 /* OFERTA - TYTUŁY I OPIS */
+.hero.oferta-hero {
+  text-align: center;
+}
 .oferta-title {
   font-size: 3.5em;
   font-weight: 900;
@@ -27,6 +30,7 @@
   font-size: 1.25em;
   color: #202020;
   margin-bottom: 1.5em;
+  text-align: center;
 }
 .oferta-highlight {
   font-size: 1.25em;
@@ -35,7 +39,8 @@
   background: #ffe60033;
   border-radius: 6px;
   padding: 2px 10px;
-  margin-left: 8px;
+  margin: 0 auto;
+  display: inline-block;
 }
 
 /* KAFELKI KATEGORII */
@@ -47,15 +52,17 @@
   margin: 40px 0 30px 0;
 }
 .category-tile {
+  display: flex !important;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 10px;
+  box-sizing: border-box;
   width: 180px;
   height: 180px;
   background: #fff;
   border-radius: 18px;
   box-shadow: 0 2px 18px #009fe322;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
   cursor: pointer;
   transition: box-shadow 0.2s, transform 0.2s, background 0.2s;
   position: relative;
@@ -68,19 +75,28 @@
   background: #f7f7f7;
 }
 .category-tile img {
+  flex-shrink: 0;
+  object-fit: contain !important;
+  margin-bottom: 12px;
   width: 80px;
   height: 80px;
-  object-fit: cover;
   border-radius: 12px;
-  margin-bottom: 16px;
   box-shadow: 0 2px 12px #009fe322;
 }
 .category-tile .name {
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  word-wrap: break-word;
+  hyphens: auto;
+  line-height: 1.2;
   font-size: 1.08em;
   font-weight: 900;
   color: #009fe3;
-  text-align: center;
   margin-top: 4px;
+  min-height: 40px;
 }
 
 /* LABEL AKTYWNEJ KATEGORII */
