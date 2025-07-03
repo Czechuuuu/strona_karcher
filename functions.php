@@ -109,3 +109,9 @@ function karcher_reviews_admin_page() {
     }
     echo '</div>';
 }
+
+function allow_webp_upload($mime_types) {
+    $mime_types['webp'] = 'image/webp';
+    return $mime_types;
+}
+add_filter('upload_mimes', 'allow_webp_upload');

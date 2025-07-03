@@ -51,7 +51,8 @@
   font-size: 1em;
 }
 .reservation-form input,
-.reservation-form textarea {
+.reservation-form textarea,
+.reservation-form select {
   border: 2px solid #bdbdbd;
   border-radius: 7px;
   padding: 10px 12px;
@@ -62,7 +63,8 @@
   transition: border 0.2s;
 }
 .reservation-form input:focus,
-.reservation-form textarea:focus {
+.reservation-form textarea:focus,
+.reservation-form select:focus {
   border-color: #009fe3;
   outline: none;
 }

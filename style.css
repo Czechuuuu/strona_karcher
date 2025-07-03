@@ -12,96 +12,126 @@ Text Domain: strona_karcher
 
 /* PODSTAWOWE STYLE */
 body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  background-color: #f7f7f7;
-}
-html { margin-top: 0 !important; }
-#wpadminbar { display: none !important; }
-
-/* MEDIA QUERIES */
-
-/* Ekrany do 1400px */
-@media (max-width: 1400px) {
-  .equipment { max-width: 990px; }
-  .equipment-item { max-width: 300px; min-height: 420px; padding: 20px; }
-}
-
-/* Ekrany do 1050px */
-@media (max-width: 1050px) {
-  .equipment { max-width: 660px; }
-  .equipment-item { max-width: 320px; min-width: 180px; }
-}
-
-/* Ekrany do 700px */
-@media (max-width: 700px) {
-  .header-inner { min-height: 70px; gap: 10px; }
-  .logo-img-wrap { height: 40px; width: 44px; }
-  .logo-img { max-height: 36px; max-width: 40px; }
-  .logo-text { font-size: 1em; }
-  .hero, .hero.oferta-hero { padding: 110px 20px 30px 20px; margin-top: -120px; }
-  .equipment { flex-direction: column; align-items: center; gap: 18px; }
-  .equipment-item { max-width: 98vw; min-width: 0; padding: 18px 8px 14px 8px; }
-  .equipment-item .image { height: 120px; margin-bottom: 10px; }
-  .equipment-item h3 { font-size: 1.1em; }
-  .map-container { margin: 30px auto; padding: 0 15px; box-sizing: border-box;text-align: center; }
-  .map-container iframe { height: 350px;max-width: 100%;margin: 0 auto;display: block; }
-}
-
-/* Ekrany do 600px - telefony */
-@media (max-width: 600px) {
-  /* Nagłówek i nawigacja */
-  header { padding: 0.5rem 0; }
-  .header-inner { flex-direction: column; align-items: center; gap: 12px; min-height: unset; }
-  .header-logo { justify-content: center; width: 100%; margin-right: 0; }
-  .logo-img-wrap { height: 60px; width: 70px; }
-  .logo-img { max-width: 60px; height: auto; }
-  .logo-text { font-size: 1.1em; text-align: center; }
-  nav { width: 100%; margin-top: 10px; overflow-x: auto; max-width: 100vw; position: absolute; top: 100%; left: 0; background: #222; box-shadow: 0 2px 12px #0002; z-index: 110; display: none; }
-  nav.active { display: block; }
-  .main-menu { flex-direction: column; align-items: center; gap: 0; width: 100vw; max-width: 100vw; box-sizing: border-box; padding: 0; margin: 0; }
-  .main-menu li { width: 100vw; text-align: center; margin: 0; padding: 12px 0; box-sizing: border-box; }
-  .hamburger { display: block; }
-  .hamburger-label { display: inline-block; vertical-align: middle; }
-  .header-hamburger-wrap { display: flex; margin-left: auto; margin-right: auto; height: 48px; justify-content: center; align-items: center; gap: 8px; }
-  header.header-transparent .hamburger { background: none; border-radius: 0; backdrop-filter: none; box-shadow: none; padding: 10px 12px; display: flex; align-items: center; justify-content: center; width: auto; height: auto; transform: none; position: relative; }
-  header.header-transparent .hamburger-box { position: relative; width: 32px; height: 24px; }
-  header.header-transparent .hamburger-inner { position: absolute; top: 50%; left: 0; transform: translateY(-50%); margin-top: 0; background: #009fe3; }
-  header.header-transparent .hamburger-inner::before, header.header-transparent .hamburger-inner::after { background: #009fe3; }
-  header.header-transparent .logo-text { color: #009fe3; text-shadow: 0 2px 8px rgba(255,255,255,0.95), 0 1px 0 #fff, 0 0 15px rgba(255,255,255,0.8); font-weight: 900; }
-
-  /* Sekcja hero */
-  .hero, .hero.oferta-hero { padding: 120px 15px 25px 15px; margin-top: -140px; }
-
-  /* O nas */
-  .about-us-main { flex-direction: column; gap: 24px; padding: 18px 8px; margin: 18px 0 10px 0; }
-  .about-us-text, .about-us-img { width: 100%; }
-  .about-us-text { font-size: 1em; }
-
-  /* Rezerwacja */
-  .reservation-section { max-width: 98vw; padding: 12px 2vw 18px 2vw; margin: 18px 0 10px 0; }
-  .reservation-flex { flex-direction: column; gap: 24px; }
-  .reservation-image-box { margin-top: 18px; padding: 12px; }
-  .reservation-envelope-large { max-width: 320px; padding: 8px; }
-  .reservation-envelope { width: 28px; height: 28px; margin-right: 6px; margin-bottom: 2px; }
-  .reservation-info-box { max-width: 100%; padding: 18px 10px; margin-top: 18px; }
-
-  /* Opinie */
-  .reviews-section {padding: 16px 2vw 16px 2vw;}
-  .review-form-section {padding: 12px 2vw 12px 2vw;}
-  .review-item {padding: 10px 2vw 10px 2vw;}
-  .average-rating-section { padding: 8px 2vw 8px 2vw; }
-  .average-rating-title { font-size: 1em; }
-  .average-rating-stars { font-size: 1.1em; gap: 4px; flex-direction: column; align-items: center; }
-  .average-rating-stars-inner { gap: 4px; }
-  .average-rating-value, .average-rating-count { margin-left: 6px; font-size: 0.6em; }
-
-  /* Slogan i stopka */
-  .slogan { font-size: 1.1em; padding: 10px 8px; margin: 24px 0 18px 0; }
-  .footer-social-icon { width: 28px; height: 28px; }
-
-  /* Mapa */
-  .map-container { margin: 20px auto; padding: 0 10px; text-align: center; }
-  .map-container iframe { height: 250px; max-width: 100%; margin: 0 auto; display: block; }
-}
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f7f7f7;
+  }
+  html { margin-top: 0 !important; }
+  #wpadminbar { display: none !important; }
+  
+  /* MEDIA QUERIES */
+  
+  /* --- 1300px --- */
+  @media (max-width: 1300px) {
+      .header-inner, .footer-inner, .container { max-width: 960px; padding-left: 20px; padding-right: 20px; }
+      .header-inner { justify-content: space-between; padding: 0 15px; }
+      .header-logo { margin-right: 0; }
+      .logo-text { font-size: 2em; }
+      .header-hamburger-wrap { display: flex !important; align-items: center; }
+      .hamburger { display: block !important; }
+      .hamburger-label { display: block !important; }
+      nav { display: none; position: absolute; top: 100%; left: 0; width: 100%; background-color: #222; box-shadow: 0 4px 12px rgba(0,0,0,0.15); z-index: 110; }
+      nav.active { display: block !important; }
+      .main-menu { flex-direction: column; align-items: center; padding: 20px 0; gap: 15px; margin: 0; }
+      .main-menu li { display: block; width: 100%; text-align: center; }
+      .main-menu a { display: block; width: 80%; margin: 0 auto; padding: 12px 20px; font-size: 1em; }
+      .about-us-main, .how-it-works-section, .reviews-section, .reservation-section, .faq-section { padding: 24px; }
+      .oferta-title { font-size: 3em; }
+  }
+  
+  /* --- 992px --- */
+  @media (max-width: 992px) { 
+      .header-inner { justify-content: space-between; padding: 0 15px; }
+      .header-logo { margin-right: 0; }
+      .header-hamburger-wrap { display: flex !important; align-items: center; }
+      .hamburger { display: block !important; }
+      .hamburger-label { display: block !important; }
+      nav { display: none; position: absolute; top: 100%; left: 0; width: 100%; background-color: #222; box-shadow: 0 4px 12px rgba(0,0,0,0.15); z-index: 110; }
+      nav.active { display: block !important; }
+      .main-menu { flex-direction: column; align-items: center; padding: 20px 0; gap: 15px; margin: 0; }
+      .main-menu li { display: block; width: 100%; text-align: center; }
+      .main-menu a { display: block; width: 80%; margin: 0 auto; padding: 12px 20px; }
+      .about-us-main { flex-direction: column; align-items: center; }
+      .about-us-text, .about-us-img { width: 100%; max-width: 500px; }
+      .reservation-flex { flex-direction: column; gap: 30px; }
+      .reservation-info-box { max-width: 100%; }
+      .footer-main { flex-direction: column; gap: 20px; }
+      .hero.oferta-hero { text-align: center; padding: 120px 20px 40px 20px; }
+      .oferta-title { font-size: 3em; }
+      .category-list { gap: 20px; margin: 30px 0 20px 0; }
+      .category-tile { width: 160px; height: 160px; }
+      .category-tile img { width: 70px; height: 70px; }
+      #current-category-label { font-size: 2.2em; padding: 25px 10px; }
+      .category-tile { padding: 12px 8px; }
+      .category-tile img { margin-bottom: 10px; }
+  }
+  
+  /* --- 768px --- */
+  @media (max-width: 768px) {
+      header { position: fixed !important; top: 0; left: 0; right: 0; z-index: 1000; }
+      .header-inner { padding: 0 15px; }
+      .logo-text { font-size: 1.8em; }
+      .logo-img { max-height: 80px; max-width: 100px; }
+      .hero { margin-top: 0 !important; padding-top: 140px !important; padding-left: 15px; padding-right: 15px; }
+      .hero-content { flex-direction: column; gap: 30px; text-align: center; }
+      .hero-text { flex: none; width: 100%; min-width: auto; }
+      .hero-text h1 { font-size: 2em !important; white-space: normal; word-wrap: break-word; line-height: 1.2; margin-bottom: 20px; }
+      .hero-text p { font-size: 1.1em; margin-bottom: 25px; }
+      .hero-image { flex: none; width: 100%; min-width: auto; }
+      .hero-image img { max-width: 80%; }
+      .cta-buttons { gap: 15px; }
+      .oferta-title { font-size: 2.5em; }
+      .category-list { gap: 20px; }
+      .category-tile { width: 150px; height: 150px; }
+      .equipment-item { max-width: 90%; }
+      .how-it-works-steps { flex-direction: column; align-items: center; } 
+      .footer-contact { padding: 15px 20px; }
+      .hero.oferta-hero { padding: 140px 15px 30px 15px; text-align: center; }
+      .oferta-title { font-size: 2.5em; text-align: center; }
+      .oferta-desc { font-size: 1.1em; text-align: center; }
+      .oferta-highlight { font-size: 1.1em; display: block; margin: 15px auto 0 auto; text-align: center; width: fit-content; }
+      .category-list { gap: 15px; margin: 25px 0 15px 0; }
+      .category-tile { padding: 10px 6px; width: 140px; height: 140px; }
+      .category-tile img { width: 60px; height: 60px; margin-bottom: 8px; }
+      .category-tile .name { font-size: 0.95em; line-height: 1.1; }
+      #current-category-label { font-size: 1.8em; padding: 20px 10px; }
+      .faq-section { margin-top: 140px; }
+      .reviews-section{ margin-top: 140px; }
+  }
+  
+  /* --- 576px --- */
+  @media (max-width: 576px) {
+      body { font-size: 14px; }
+      header { position: fixed !important; min-height: auto; padding: 10px 10px; }
+      .header-inner { flex-direction: column; align-items: center; gap: 10px; min-height: auto; padding: 0 10px; }
+      .header-logo { margin-right: 0; order: 1; }
+      .header-logo a { gap: 8px; justify-content: center; }
+      .logo-text { display: block !important; font-size: 1.1em; text-align: center; }
+      .logo-img-wrap { width: 50px; height: 50px; margin: 0; }
+      .logo-img { max-height: 45px; max-width: 50px; }
+      .header-hamburger-wrap { order: 2; display: flex !important; align-items: center; justify-content: center; width: 100%; }
+      .hamburger { margin-left: 0 !important; }
+      nav { order: 3; position: relative; top: 0; width: 100%; margin-top: 10px; }
+      .hero { padding-top: 140px !important; padding-left: 10px; padding-right: 10px; padding-bottom: 30px; }
+      .hero-content { gap: 20px; }
+      .hero-text h1 { font-size: 1.8em !important; line-height: 1.3; margin-bottom: 15px; padding: 0 5px; }
+      .hero-text p { font-size: 1em; margin-bottom: 20px; padding: 0 5px; }
+      .cta-buttons { flex-direction: column; align-items: center; gap: 12px; padding: 0 10px; }
+      .button.cta, .button.cta-alt { width: 100%; max-width: 280px; text-align: center; padding: 12px 20px; font-size: 1em; }
+      .hero-image img { max-width: 90%; }
+      .oferta-title { font-size: 2em; }
+      .category-tile { width: 120px; height: 120px; }
+      .category-tile img { width: 50px; height: 50px; }
+      .review-row, .reservation-row { flex-direction: column; }
+      .footer-logo-block { flex-direction: column; }
+      .hero.oferta-hero { padding: 120px 10px 25px 10px; text-align: center; }
+      .oferta-title { font-size: 2em; text-align: center; line-height: 1.2; }
+      .oferta-desc { font-size: 1em; text-align: center; margin-bottom: 1em; }
+      .oferta-highlight { font-size: 1em; display: block; margin: 10px auto 0 auto; text-align: center; width: fit-content; padding: 5px 15px; }
+      .category-list { gap: 12px; margin: 20px 0 10px 0; justify-content: center; }
+      .category-tile { width: 120px; height: 120px; padding: 8px 5px; }
+      .category-tile img { width: 50px; height: 50px; margin-bottom: 6px; }
+      .category-tile .name { font-size: 0.9em; line-height: 1.2; font-size: 0.85em; line-height: 1.1; }
+      #current-category-label { font-size: 1.5em; padding: 15px 5px; line-height: 1.3; }
+  }

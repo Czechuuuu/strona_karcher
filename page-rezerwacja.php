@@ -26,7 +26,24 @@ wp_enqueue_style(
 ?>
 
 <?php
-get_header(); ?>
+global $wpdb;
+get_header();
+
+$equipment_options = [];
+$equipment_query = new WP_Query([
+    'post_type' => 'sprzet',
+    'posts_per_page' => -1,
+    'orderby' => 'title',
+    'order' => 'ASC',
+]);
+if ($equipment_query->have_posts()) {
+    while ($equipment_query->have_posts()) {
+        $equipment_query->the_post();
+        $equipment_options[] = get_the_title();
+    }
+    wp_reset_postdata();
+}
+?>
 
 <section class="reservation-section">
   <h1 class="reservation-title">Zarezerwuj sprzęt online</h1>
@@ -47,11 +64,20 @@ get_header(); ?>
           <input type="email" id="res-email" name="res-email">
         </div>
         <div class="reservation-row">
-          <label for="res-message">Wiadomość / sprzęt do rezerwacji*</label>
-          <textarea id="res-message" name="res-message" rows="4" required></textarea>
+          <label for="res-equipment">Sprzęt do rezerwacji*</label>
+          <select id="res-equipment" name="res-equipment" required>
+            <option value="">-- Wybierz sprzęt --</option>
+            <?php foreach ($equipment_options as $eq): ?>
+              <option value="<?php echo esc_attr($eq); ?>"><?php echo esc_html($eq); ?></option>
+            <?php endforeach; ?>
+          </select>
+        </div>
+        <div class="reservation-row">
+          <label for="res-message">Wiadomość / dodatkowe informacje</label>
+          <textarea id="res-message" name="res-message" rows="4" placeholder="Dodatkowe informacje o rezerwacji, terminie lub specjalnych wymaganiach..."></textarea>
         </div>
         <button type="submit" class="button cta">Wyślij rezerwację</button>
-        <?php if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['res-name'], $_POST['res-phone'], $_POST['res-message'])): ?>
+        <?php if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['res-name'], $_POST['res-phone'], $_POST['res-equipment'])): ?>
           <div class="reservation-success">Dziękujemy za zgłoszenie! Skontaktujemy się z Tobą wkrótce.</div>
         <?php endif; ?>
       </form>

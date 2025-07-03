@@ -29,39 +29,39 @@ wp_enqueue_style(
 $categories = [
     'all' => [
         'name' => 'Wszystkie',
-        'img' => get_template_directory_uri() . '/assets/images/all.png',
+        'img' => get_template_directory_uri() . '/assets/images/all.webp',
     ],
     'myjka' => [
         'name' => 'Myjki Ciśnieniowe',
-        'img' => get_template_directory_uri() . '/assets/images/myjka.jpg',
+        'img' => get_template_directory_uri() . '/assets/images/myjka.webp',
     ],
     'odkurzaczU' => [
         'name' => 'Odkurzacze Uniwersalne',
-        'img' => get_template_directory_uri() . '/assets/images/odkurzaczU.jpg',
+        'img' => get_template_directory_uri() . '/assets/images/odkurzaczU.webp',
     ],
     'oczyszczacz' => [
         'name' => 'Oczyszczacze Powietrza',
-        'img' => get_template_directory_uri() . '/assets/images/oczyszczacz.jpg',
+        'img' => get_template_directory_uri() . '/assets/images/oczyszczacz.webp',
     ],
     'odkurzaczP' => [
         'name' => 'Odkurzacze Piorące',
-        'img' => get_template_directory_uri() . '/assets/images/odkurzaczP.jpg',
+        'img' => get_template_directory_uri() . '/assets/images/odkurzaczP.webp',
     ],
     'dmuchawa' => [
         'name' => 'Dmuchawy do Liści',
-        'img' => get_template_directory_uri() . '/assets/images/dmuchawa.jpg',
+        'img' => get_template_directory_uri() . '/assets/images/dmuchawa.webp',
     ],
     'kosiarka' => [
         'name' => 'Kosiarki Akumulatorowe',
-        'img' => get_template_directory_uri() . '/assets/images/kosiarka.jpg',
+        'img' => get_template_directory_uri() . '/assets/images/kosiarka.webp',
     ],
     'podkaszarka' => [
         'name' => 'Podkaszarki Akumulatorowe',
-        'img' => get_template_directory_uri() . '/assets/images/podkaszarka.jpg',
+        'img' => get_template_directory_uri() . '/assets/images/podkaszarka.webp',
     ],
     'nozyce' => [
         'name' => 'Akumulatorowe Nożyce do Żywopłotu',
-        'img' => get_template_directory_uri() . '/assets/images/nozyce.jpg',
+        'img' => get_template_directory_uri() . '/assets/images/nozyce.webp',
     ],
 ];
 
