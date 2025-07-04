@@ -153,3 +153,15 @@ footer {
   color: #009fe3;
   text-decoration: underline;
 }
+
+/* LINK DEVELOART */
+.footer-bottom a[href*="develoart"] {
+  color: #009fe3;
+  font-weight: 700;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.footer-bottom a[href*="develoart"]:hover {
+  color: #ffe600;
+}

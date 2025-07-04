@@ -28,7 +28,7 @@
             <span class="hamburger-inner"></span>
           </span>
         </button>
-        <span class="hamburger-label" id="hamburger-label">Rozwiń menu</span>
+        <span class="hamburger-label" id="hamburger-label"><span class="hamburger-label-line1">Rozwiń</span><br><span class="hamburger-label-line2">Menu</span></span>
       </div>
       <nav>
         <?php

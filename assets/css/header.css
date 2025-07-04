@@ -91,6 +91,8 @@ header.header-transparent .logo-text {
 
 nav {
   flex: 1 1 auto;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  transform-origin: top;
 }
 
 .main-menu {
@@ -99,6 +101,7 @@ nav {
   list-style: none;
   padding: 0;
   margin: 0;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .main-menu li {
@@ -112,9 +115,14 @@ nav {
   color: #fff;
   background-color: #009fe3;
   border-radius: 6px;
-  transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   font-weight: 500;
   position: relative;
+  transform: translateY(0);
+}
+
+.main-menu a:hover {
+  transform: translateY(-2px);
 }
 
 .main-menu a:hover,
@@ -155,9 +163,11 @@ header.header-transparent .main-menu .current_page_item > a {
 
 .header-hamburger-wrap {
   display: none;
-  flex-direction: column;
-  align-items: flex-end;
-  gap: 4px;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  width: 100%;
   cursor: pointer;
 }
 
@@ -171,6 +181,15 @@ header.header-transparent .main-menu .current_page_item > a {
   z-index: 120;
   position: relative;
   transform: none;
+  transition: transform 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.hamburger:hover {
+  transform: scale(1.1);
+}
+
+.hamburger:active {
+  transform: scale(0.95);
 }
 
 .hamburger-box {
@@ -189,7 +208,7 @@ header.header-transparent .main-menu .current_page_item > a {
   background: #009fe3;
   border-radius: 3px;
   position: absolute;
-  transition: all 0.3s;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .hamburger-inner::before,
@@ -200,7 +219,7 @@ header.header-transparent .main-menu .current_page_item > a {
   height: 4px;
   background: #009fe3;
   border-radius: 3px;
-  transition: all 0.3s;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .hamburger-inner::before { 
@@ -213,6 +232,7 @@ header.header-transparent .main-menu .current_page_item > a {
 
 .hamburger.active .hamburger-inner { 
   background: transparent; 
+  transform: rotate(180deg);
 }
 
 .hamburger.active .hamburger-inner::before { 
@@ -224,21 +244,27 @@ header.header-transparent .main-menu .current_page_item > a {
 }
 
 .hamburger-label {
-  display: none;
-  margin-left: 10px;
+  display: block;
+  margin-left: 0;
   font-size: 1.08em;
   color: #009fe3;
   font-weight: 700;
   letter-spacing: 0.5px;
   user-select: none;
   cursor: pointer;
-  transition: color 0.2s;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  text-align: left;
+  line-height: 1.1;
 }
 
-.header-hamburger-wrap {
-  display: none;
-  align-items: center;
-  gap: 8px;
+.hamburger-label:hover {
+  color: #ffe600;
+  transform: translateX(3px);
+}
+
+.hamburger-label-line1,
+.hamburger-label-line2 {
+  display: block;
 }
 
 header.header-transparent .hamburger {

@@ -24,6 +24,7 @@
     </div>
     <div class="footer-bottom">
       <p>&copy; <?php echo date('Y'); ?> Wypożyczalnia Karcher. Wszelkie prawa zastrzeżone.</p>
+      <p>Wykonano przez <a href="https://develoart.com" target="_blank" rel="noopener">Develoart</a></p>
       <div class="footer-legal-links">
         <a href="<?php echo get_template_directory_uri(); ?>/assets/polityka-prywatnosci.pdf" download class="footer-legal-link">Polityka prywatności</a> |
         <a href="<?php echo get_template_directory_uri(); ?>/assets/regulamin.pdf" download class="footer-legal-link">Regulamin</a>
